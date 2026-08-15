@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "uniwind";
+
+@import "tw-animate-css"; 
+
+@theme {
+  --radius: 14px;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --spacing-hairline: hairlineWidth();
+
+  /* Montra OKLCH Primary Tokens */
+  --color-charcoal: oklch(0.177 0.001 240);
+  --color-forest: oklch(0.274 0.046 145);
+  --color-ivory: oklch(0.972 0.008 75);
+  --color-fog: oklch(0.916 0.007 230);
+
+  /* Semantic Financial Accents (OKLCH) */
+  --color-income: oklch(0.720 0.160 150);          /* Deep Forest Mint */
+  --color-income-muted: oklch(0.930 0.040 150);
+  --color-expense: oklch(0.660 0.180 20);          /* Mindful Crimson */
+  --color-expense-muted: oklch(0.930 0.040 20);
+  --color-transfer: oklch(0.680 0.080 230);        /* Soft Fog Slate */
+  --color-transfer-muted: oklch(0.930 0.030 230);
+  
+  --color-budget-on-track: oklch(0.720 0.160 150);
+  --color-budget-warning: oklch(0.780 0.140 75);   /* Golden Amber */
+  --color-budget-exceeded: oklch(0.660 0.180 20);  /* Crimson Alert */
+
+  /* Typography scale */
+  --text-display: 2.25rem;
+  --text-heading: 1.5rem;
+  --text-title: 1.125rem;
+  --text-body: 1rem;
+  --text-caption: 0.875rem;
+  --text-micro: 0.75rem;
+
+  /* Spacing scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+}
+
+@layer theme {
+  :root {
+    @variant light {
+      --color-background: oklch(0.972 0.008 75);
+      --color-foreground: oklch(0.177 0.001 240);
+      --color-card: oklch(1 0 0);
+      --color-card-foreground: oklch(0.177 0.001 240);
+      --color-popover: oklch(1 0 0);
+      --color-popover-foreground: oklch(0.177 0.001 240);
+      --color-primary: oklch(0.274 0.046 145);
+      --color-primary-foreground: oklch(0.972 0.008 75);
+      --color-secondary: oklch(0.940 0.010 75);
+      --color-secondary-foreground: oklch(0.177 0.001 240);
+      --color-muted: oklch(0.940 0.010 75);
+      --color-muted-foreground: oklch(0.480 0.012 230);
+      --color-accent: oklch(0.910 0.012 75);
+      --color-accent-foreground: oklch(0.177 0.001 240);
+      --color-destructive: oklch(0.550 0.180 20);
+      --color-border: oklch(0.916 0.007 230);
+      --color-input: oklch(0.916 0.007 230);
+      --color-ring: oklch(0.274 0.046 145);
+
+      /* Trust Financial Accents (Light) */
+      --color-income: oklch(0.500 0.150 150);
+      --color-income-muted: oklch(0.930 0.040 150);
+      --color-expense: oklch(0.550 0.180 20);
+      --color-expense-muted: oklch(0.930 0.040 20);
+      --color-transfer: oklch(0.500 0.080 230);
+      --color-transfer-muted: oklch(0.930 0.030 230);
+
+      /* Analytical Spectrum (Light) */
+      --color-chart-1: oklch(0.274 0.046 145);
+      --color-chart-2: oklch(0.500 0.150 150);
+      --color-chart-3: oklch(0.640 0.140 75);
+      --color-chart-4: oklch(0.550 0.180 20);
+      --color-chart-5: oklch(0.500 0.080 230);
+      --color-sidebar: oklch(0.972 0.008 75);
+      --color-sidebar-foreground: oklch(0.177 0.001 240);
+      --color-sidebar-primary: oklch(0.274 0.046 145);
+      --color-sidebar-primary-foreground: oklch(0.972 0.008 75);
+      --color-sidebar-accent: oklch(0.940 0.010 75);
+      --color-sidebar-accent-foreground: oklch(0.177 0.001 240);
+      --color-sidebar-border: oklch(0.916 0.007 230);
+      --color-sidebar-ring: oklch(0.274 0.046 145);
+    }
+
+    @variant dark {
+      --color-background: oklch(0.177 0.001 240);
+      --color-foreground: oklch(0.972 0.008 75);
+      --color-card: oklch(0.210 0.008 145);
+      --color-card-foreground: oklch(0.972 0.008 75);
+      --color-popover: oklch(0.210 0.008 145);
+      --color-popover-foreground: oklch(0.972 0.008 75);
+      --color-primary: oklch(0.972 0.008 75);
+      --color-primary-foreground: oklch(0.177 0.001 240);
+      --color-secondary: oklch(0.250 0.010 145);
+      --color-secondary-foreground: oklch(0.972 0.008 75);
+      --color-muted: oklch(0.235 0.008 145);
+      --color-muted-foreground: oklch(0.720 0.008 230);
+      --color-accent: oklch(0.280 0.012 145);
+      --color-accent-foreground: oklch(0.972 0.008 75);
+      --color-destructive: oklch(0.660 0.180 20);
+      --color-border: oklch(0.280 0.012 145);
+      --color-input: oklch(0.280 0.012 145);
+      --color-ring: oklch(0.972 0.008 75);
+
+      /* Trust Financial Accents (Dark) */
+      --color-income: oklch(0.720 0.160 150);
+      --color-income-muted: oklch(0.200 0.040 150);
+      --color-expense: oklch(0.660 0.180 20);
+      --color-expense-muted: oklch(0.200 0.040 20);
+      --color-transfer: oklch(0.680 0.080 230);
+      --color-transfer-muted: oklch(0.200 0.030 230);
+
+      /* Analytical Spectrum (Dark) */
+      --color-chart-1: oklch(0.720 0.160 150);
+      --color-chart-2: oklch(0.916 0.007 230);
+      --color-chart-3: oklch(0.780 0.140 75);
+      --color-chart-4: oklch(0.660 0.180 20);
+      --color-chart-5: oklch(0.680 0.080 230);
+      --color-sidebar: oklch(0.190 0.005 240);
+      --color-sidebar-foreground: oklch(0.972 0.008 75);
+      --color-sidebar-primary: oklch(0.720 0.160 150);
+      --color-sidebar-primary-foreground: oklch(0.177 0.001 240);
+      --color-sidebar-accent: oklch(0.250 0.010 145);
+      --color-sidebar-accent-foreground: oklch(0.972 0.008 75);
+      --color-sidebar-border: oklch(0.280 0.012 145);
+      --color-sidebar-ring: oklch(0.972 0.008 75);
+    }
+  }
+}
